@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity2"
+android:background="@drawable/background_gradient">
+
+<FrameLayout
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="58dp"
+        android:layout_height="53dp"
+        android:layout_gravity="start|center_vertical"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HopeLink 🌍🤝"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+</FrameLayout>
+
+<!-- ScrollView added here -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/header"
+    android:layout_marginTop="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:spacing="16dp">
+
+        <TextView
+            android:id="@+id/poverty_paragraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/donation_text"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="4dp"
+            android:text="Millions of people around the world live in poverty, struggling to meet their basic needs. Your donation can provide food, shelter, and education to those in need. Join us in making a difference and bringing hope to communities worldwide."
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voices Against Poverty: Inspiring Quotes for Change"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"/>
+
+
+        <!-- Image 1 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/portrait"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Quote 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“Poverty is the parent of revolution and crime.” —Aristotle"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Quote 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“Poverty is not an accident. Like slavery and apartheid, it is man-made and can be removed by the actions of human beings.” —Nelson Mandela"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+        <!-- Image 2 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/child"
+            android:layout_marginBottom="10dp"/>
+        <!-- Quote 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“Poverty is the worst form of violence.” —Mahatma Gandhi"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Add more quotes below -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“The greatest disease in the West today is not tuberculosis or leprosy; it is being unwanted, unloved, and uncared for.” —Mother Teresa"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Image 3 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/poverty"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“Poverty isn’t a lack of character. It’s a lack of cash.” —Rutger Bregman"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“We are the first generation that can end poverty.” —Ban Ki-moon"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Image 4 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/feed"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Add more quotes as needed -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“If you want to go fast, go alone. If you want to go far, go together.” —African Proverb"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“The function of freedom is to free someone else.” —Toni Morrison"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Image 5 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/smile"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“It is true that global wealth is growing in absolute terms, but inequalities have also grown, and new poverty arisen.” —Pope Francis"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“How wonderful it is that nobody need wait a single moment before starting to improve the world.” —Anne Frank"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Image 6 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pov"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“Our worst foes are ignorance, poverty, and the unconscious cruelty of our commercial society.” —Helen Keller"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“No matter how big a nation is, it is no stronger than its weakest people.” —Marian Anderson"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Image 7 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ngo"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“The African concept ubuntu [is] the essence of being human — that a person is a person only through other persons, that my humanity is caught up in yours. I am fully me only if you are all you can be.” —Desmond Tutu"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“Wars of nations are fought to change maps. But wars of poverty are fought to map change.” —Muhammad Ali"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Image 8 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/old"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/input_field_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="“The function of freedom is to free someone else.” —Toni Morrison"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <!-- Image 9-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/son"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+</ScrollView>
+
+<FrameLayout
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:id="@+id/foote"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4">
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/home"
+            android:scaleType="fitCenter"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Home" />
+
+        <ImageButton
+            android:id="@+id/btn_search"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/detail"
+            android:scaleType="fitCenter"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Search" />
+
+        <ImageButton
+            android:id="@+id/btn_donate"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/donate"
+            android:scaleType="fitCenter"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Donations" />
+
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/profile"
+            android:scaleType="fitCenter"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Profile" />
+
+    </LinearLayout>
+
+</FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity3"
+    android:background="@drawable/background_gradient">
+
+    <!-- Header -->
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="58dp"
+            android:layout_height="53dp"
+            android:layout_gravity="start|center_vertical"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HopeLink 🌍🤝"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <!-- Donation Section -->
+            <TextView
+                android:id="@+id/donation_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Give your valuable donations to end the poverty"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Paragraphs -->
+            <TextView
+                android:id="@+id/paragraph1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Millions of people worldwide struggle with extreme poverty. Your donation can help provide essential resources such as food, clean water, and education."
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/paragraph2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your donation is a powerful tool in the fight against poverty. It directly helps provide food, shelter, education, and healthcare to those in need. Every contribution, no matter the size, can make a real difference in breaking the cycle of poverty.\n\nHere’s why your donation is important:\n\nProviding Basic Needs – Many people struggle to afford food, clean water, and shelter. Your donation helps ensure they have access to these essentials.\n\nSupporting Education – Education is a key factor in overcoming poverty. Your donation can provide school supplies, tuition, and better learning opportunities for underprivileged children.\n\nImproving Healthcare – Poor communities often lack access to proper healthcare. Your support helps fund medical treatment, vaccinations, and maternal care.\n\nCreating Economic Opportunities – Donations can fund job training programs and small business initiatives, empowering individuals to build a sustainable future.\n\nEmergency Relief – During crises like natural disasters, wars, or pandemics, donations help provide immediate relief, including food, shelter, and medical aid.\n\nBy donating, you become part of a global effort to reduce poverty and create a better world. Your generosity can change lives and offer hope to those in need. 🌍❤️"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="10dp"/>
+
+            <!-- Image Above Donation Amount -->
+            <ImageView
+                android:id="@+id/donation_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/smile"
+                android:layout_gravity="center"
+                android:contentDescription="Donation Icon"
+                android:layout_marginTop="10dp"/>
+
+            <!-- Card Number -->
+            <EditText
+                android:id="@+id/et_donation_amount"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:hint="Credit/Debit Card Number"
+                android:textColorHint="@color/black"
+                android:inputType="numberDecimal"
+                android:background="@color/white"
+                android:backgroundTint="#848944"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <!-- Card Expiry -->
+            <EditText
+                android:id="@+id/et_card_expiry"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:hint="MM/YY"
+                android:textColorHint="@color/black"
+                android:inputType="date"
+                android:background="@color/white"
+                android:backgroundTint="#848944"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <!-- Donate Button -->
+            <Button
+                android:id="@+id/btn_donate"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Donate"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:backgroundTint="#CD60EB"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer -->
+    <FrameLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/footer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="4">
+
+            <ImageButton
+                android:id="@+id/btn_home"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/home"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Home"/>
+
+            <ImageButton
+                android:id="@+id/btn_search"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/detail"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Search"/>
+
+            <ImageButton
+                android:id="@+id/btn_notifications"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/donate"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Donations"/>
+
+            <ImageButton
+                android:id="@+id/btn_profile"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/profile"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Profile"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>

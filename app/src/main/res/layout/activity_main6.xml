@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity6"
+    android:background="@drawable/background_gradient">
+
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="58dp"
+            android:layout_height="53dp"
+            android:layout_gravity="start|center_vertical"
+            app:srcCompat="@drawable/logo" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HopeLink 🌍🤝"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+    <!-- ScrollView for Content -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Poverty Introduction -->
+            <TextView
+                android:id="@+id/poverty_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="What is Poverty?"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/poverty_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:text="Poverty is a state in which individuals or communities lack the financial resources to meet basic needs such as food, shelter, healthcare, and education. It is a major global issue affecting billions of people worldwide."
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Types of Poverty -->
+            <TextView
+                android:id="@+id/types_poverty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Types of Poverty"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Absolute Poverty – When people do not have enough income to afford basic necessities (e.g., food, water, shelter, and healthcare).\n\n• Relative Poverty – When people have less income compared to others in their society, leading to social exclusion and lower quality of life.\n\n• Situational Poverty – Caused by sudden crises such as natural disasters, wars, or economic recessions.\n\n• Chronic Poverty – Long-term poverty that persists for generations, often due to systemic issues like discrimination and lack of access to education."
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:paddingBottom="16dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingBottom="16dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/absolute"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/relative"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/situational"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/chronic"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+
+            <!-- Causes of Poverty -->
+            <TextView
+                android:id="@+id/causes_poverty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Causes of Poverty"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Unemployment and Low Wages – Lack of stable income sources keeps people in poverty.\n\n• Lack of Education – Education is key to escaping poverty, but many poor communities lack schools or resources.\n\n• Economic Inequality – Wealth is unevenly distributed, keeping certain populations at a disadvantage.\n\n• Conflict and Political Instability – Wars and corrupt governments hinder economic growth and stability.\n\n• Climate Change and Natural Disasters – Droughts, floods, and other disasters can destroy livelihoods and push people into poverty."
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:paddingBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingBottom="16dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/africa"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/hung"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/cute"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/pandemic"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+            <!-- Effects of Poverty -->
+            <TextView
+                android:id="@+id/effects_poverty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Effects of Poverty"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Malnutrition and poor health\n• Limited access to education\n• Increased crime and social unrest\n• Homelessness and poor living conditions\n• Child labor and exploitation"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:paddingBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingBottom="16dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/pove"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/educ"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/women"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/somalia"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+            <!-- Solutions to Reduce Poverty -->
+            <TextView
+                android:id="@+id/solutions_poverty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Solutions to Reduce Poverty"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Education and Skill Development – Providing free and quality education can help individuals secure better jobs.\n\n• Economic Growth and Job Creation – Investments in industries and small businesses can create employment opportunities.\n\n• Healthcare Access – Affordable healthcare reduces financial burdens on poor families.\n\n• Social Welfare Programs – Government programs like food assistance, housing support, and cash transfers help reduce poverty.\n\n• Gender Equality – Empowering women and girls can break the cycle of poverty in many communities.\n\n• Sustainable Development – Investing in renewable energy, clean water, and environmental protection helps communities build resilience."
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:paddingBottom="16dp" />
+
+            <TextView
+                android:id="@+id/poorest_countries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Factors Behind the Struggles of the World’s Poorest Nations"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="As of 2024, the world's poorest countries, ranked by GDP per capita adjusted for purchasing power parity (PPP), are:\n\nSouth Sudan: $455\n\nBurundi: $916\n\nCentral African Republic: $1,123\n\nDemocratic Republic of the Congo: $1,552\n\nMozambique: $1,649\n\nNiger: $1,675\n\nMalawi: $1,712\n\nLiberia: $1,882\n\nMadagascar: $1,979\n\nYemen: $1,996\n\nThese figures reflect the average annual income per person, adjusted for cost of living and inflation rates."
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:paddingBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingBottom="16dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/photo3"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/photo2"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/photo1"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/love"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/foote"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="4">
+
+            <ImageButton
+                android:id="@+id/btn_home"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/home"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Home" />
+
+            <ImageButton
+                android:id="@+id/btn_search"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/detail"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Search" />
+
+            <ImageButton
+                android:id="@+id/btn_notifications"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/donate"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Donations" />
+
+            <ImageButton
+                android:id="@+id/btn_profile"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/profile"
+                android:scaleType="fitCenter"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Profile" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</RelativeLayout>
