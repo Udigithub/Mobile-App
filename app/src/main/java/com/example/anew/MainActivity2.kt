@@ -30,7 +30,6 @@ class MainActivity2 : AppCompatActivity() {
             val intentToLogin = Intent(this, MainActivity6::class.java)
             startActivity(intentToLogin)
         }
-
         val imageButton3 = findViewById<ImageButton>(R.id.btn_donate)
         imageButton3.setOnClickListener {
             val intentToLogin = Intent(this, MainActivity3::class.java)

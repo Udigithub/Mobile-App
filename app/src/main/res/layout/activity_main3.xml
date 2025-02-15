@@ -77,7 +77,7 @@
                 android:id="@+id/paragraph2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your donation is a powerful tool in the fight against poverty. It directly helps provide food, shelter, education, and healthcare to those in need. Every contribution, no matter the size, can make a real difference in breaking the cycle of poverty.\n\nHere’s why your donation is important:\n\nProviding Basic Needs – Many people struggle to afford food, clean water, and shelter. Your donation helps ensure they have access to these essentials.\n\nSupporting Education – Education is a key factor in overcoming poverty. Your donation can provide school supplies, tuition, and better learning opportunities for underprivileged children.\n\nImproving Healthcare – Poor communities often lack access to proper healthcare. Your support helps fund medical treatment, vaccinations, and maternal care.\n\nCreating Economic Opportunities – Donations can fund job training programs and small business initiatives, empowering individuals to build a sustainable future.\n\nEmergency Relief – During crises like natural disasters, wars, or pandemics, donations help provide immediate relief, including food, shelter, and medical aid.\n\nBy donating, you become part of a global effort to reduce poverty and create a better world. Your generosity can change lives and offer hope to those in need. 🌍❤️"
+                android:text="Your donation is a powerful tool in the fight against poverty. It directly helps provide food, shelter, education, and healthcare to those in need. Every contribution, no matter the size, can make a real difference in breaking the cycle of poverty.\n\nHere’s why your donation is important:\n\n• Providing Basic Needs.\n\n• Supporting Education.\n\n• Improving Healthcare\n\n• Creating Economic Opportunities\n\n• Emergency Relief.\n\nBy donating, you become part of a global effort to reduce poverty and create a better world. Your generosity can change lives and offer hope to those in need. 🌍❤️"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -140,7 +140,7 @@
 
             <!-- Donate Button -->
             <Button
-                android:id="@+id/btn_donate"
+                android:id="@+id/btn_donation"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="32dp"
@@ -195,7 +195,7 @@
                 android:contentDescription="Search"/>
 
             <ImageButton
-                android:id="@+id/btn_notifications"
+                android:id="@+id/btn_donate"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
