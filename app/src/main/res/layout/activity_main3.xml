@@ -95,29 +95,44 @@
 
             <!-- Card Number -->
             <EditText
-                android:id="@+id/et_donation_amount"
+                android:id="@+id/donation_name"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:hint="Credit/Debit Card Number"
+                android:hint="Full Name"
                 android:textColorHint="@color/black"
                 android:inputType="numberDecimal"
                 android:background="@color/white"
-                android:backgroundTint="#848944"
+                android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:padding="10dp"
                 android:layout_marginTop="10dp"/>
 
-            <!-- Card Expiry -->
+            <!-- Id card number -->
             <EditText
-                android:id="@+id/et_card_expiry"
+                android:id="@+id/id_card_number"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:hint="MM/YY"
+                android:hint="ID Card Number"
                 android:textColorHint="@color/black"
                 android:inputType="date"
                 android:background="@color/white"
-                android:backgroundTint="#848944"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <!-- Id card number -->
+            <EditText
+                android:id="@+id/donation_amount"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:hint="Rs."
+                android:textColorHint="@color/black"
+                android:inputType="date"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:padding="10dp"
@@ -126,14 +141,14 @@
             <!-- Donate Button -->
             <Button
                 android:id="@+id/btn_donate"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#3F51B5"
                 android:text="Donate"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textColor="@color/white"
-                android:background="@color/black"
-                android:backgroundTint="#CD60EB"
-                android:layout_marginTop="20dp"/>
+                android:textStyle="bold"/>
         </LinearLayout>
     </ScrollView>
 
@@ -143,7 +158,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/black">
+        android:background="@drawable/background_gradient">
 
         <LinearLayout
             android:id="@+id/footer_layout"
