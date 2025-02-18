@@ -101,7 +101,7 @@
                 android:layout_height="50dp"
                 android:hint="Full Name"
                 android:textColorHint="@color/black"
-                android:inputType="numberDecimal"
+                android:inputType="text"
                 android:background="@color/white"
                 android:backgroundTint="@color/white"
                 android:textColor="@color/black"
