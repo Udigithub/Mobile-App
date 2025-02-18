@@ -13,7 +13,7 @@ android:background="@drawable/background_gradient">
     android:id="@+id/header"
     android:layout_width="match_parent"
     android:layout_height="54dp"
-    android:background="@color/black">
+    android:background="#1565C0">
 
     <ImageView
         android:id="@+id/imageView"
@@ -31,7 +31,9 @@ android:background="@drawable/background_gradient">
         android:textColor="@color/white"
         android:textSize="28dp"
         android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"/>
+
 </FrameLayout>
 
 <!-- ScrollView added here -->
@@ -68,7 +70,7 @@ android:background="@drawable/background_gradient">
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Voices Against Poverty: Inspiring Quotes for Change"
+            android:text="Voices Against Poverty: Inspiring Quotes for Change\n"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/black"

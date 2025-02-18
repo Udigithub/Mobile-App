@@ -12,7 +12,7 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:background="@color/black">
+        android:background="#1565C0">
 
         <ImageView
             android:id="@+id/imageView"
@@ -20,7 +20,6 @@
             android:layout_height="53dp"
             android:layout_gravity="start|center_vertical"
             app:srcCompat="@drawable/logo" />
-
 
         <TextView
             android:id="@+id/textView"
@@ -31,7 +30,8 @@
             android:textColor="@color/white"
             android:textSize="28dp"
             android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"/>
     </FrameLayout>
     <!-- ScrollView for Content -->
     <ScrollView
