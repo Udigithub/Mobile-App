@@ -84,7 +84,7 @@
                 android:textSize="16sp"
                 android:padding="10dp"/>
 
-            <!-- Image Above Donation Amount -->
+
             <ImageView
                 android:id="@+id/donation_image"
                 android:layout_width="200dp"
@@ -94,7 +94,7 @@
                 android:contentDescription="Donation Icon"
                 android:layout_marginTop="10dp"/>
 
-            <!-- Card Number -->
+
             <EditText
                 android:id="@+id/donation_name"
                 android:layout_width="250dp"
@@ -124,7 +124,7 @@
                 android:padding="10dp"
                 android:layout_marginTop="10dp"/>
 
-            <!-- Id card number -->
+            <!-- amount of donating -->
             <EditText
                 android:id="@+id/donation_amount"
                 android:layout_width="250dp"
