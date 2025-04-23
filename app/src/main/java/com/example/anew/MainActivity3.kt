@@ -4,39 +4,66 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.anew.MainActivity4
-import com.example.anew.R.id.btn_donate
 
 class MainActivity3 : AppCompatActivity() {
+
+    lateinit var fullnameInput: EditText
+    lateinit var idInput: EditText
+    lateinit var amountInput: EditText
+    lateinit var donateBtn: Button
+
     @SuppressLint("CutPasteId", "WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main3)
+
+        fullnameInput = findViewById(R.id.donation_name)
+        idInput = findViewById(R.id.id_card_number)
+        amountInput = findViewById(R.id.donation_amount)
+        donateBtn = findViewById(R.id.btn_donation)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val donateButton = findViewById<Button>(R.id.btn_donation)
 
-        // Set onClickListener for sign-up button
-        donateButton.setOnClickListener {
-            // Logic for handling the sign-up process
-            // Here you would add any validation and saving user data
-            // For now, we'll simulate a successful registration and go to MainActivity (login screen)
+        donateBtn.setOnClickListener {
+            val fullName = fullnameInput.text.toString().trim()
+            val idNumber = idInput.text.toString().trim()
+            val amount = amountInput.text.toString().trim()
 
-            // Navigate to MainActivity (login screen)
+            // Input validation
+            if (fullName.isEmpty()) {
+                fullnameInput.error = "Full name is required"
+                return@setOnClickListener
+            }
+
+            if (idNumber.isEmpty()) {
+                idInput.error = "ID number is required"
+                return@setOnClickListener
+            }
+
+            if (amount.isEmpty()) {
+                amountInput.error = "Amount is required"
+                return@setOnClickListener
+            }
+
+            // If all fields are filled, navigate to next screen
             val intent = Intent(this@MainActivity3, MainActivity7::class.java)
             startActivity(intent)
             finish()
-
         }
+
+        // Navigation buttons
         val imageButton1 = findViewById<ImageButton>(R.id.btn_home)
         imageButton1.setOnClickListener {
             val intentToLogin = Intent(this, MainActivity2::class.java)
@@ -48,6 +75,7 @@ class MainActivity3 : AppCompatActivity() {
             val intentToLogin = Intent(this, MainActivity6::class.java)
             startActivity(intentToLogin)
         }
+
         val imageButton3 = findViewById<ImageButton>(R.id.btn_donate)
         imageButton3.setOnClickListener {
             val intentToLogin = Intent(this, MainActivity3::class.java)

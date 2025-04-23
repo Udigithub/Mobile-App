@@ -73,7 +73,7 @@
             android:id="@+id/fullname_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="John Doe"
+            android:text="Uditha Madhushanka"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:layout_marginTop="12dp"/>
@@ -94,7 +94,7 @@
             android:id="@+id/email_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="johndoe@example.com"
+            android:text="madhushankauditha@gmail.com"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:layout_marginTop="12dp"/>
