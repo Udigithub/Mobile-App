@@ -62,62 +62,36 @@
             android:id="@+id/fullname_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Full Name:"
+            android:text="Full Name:  "
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#FFD700"
             android:layout_marginTop="40dp"/>
 
-        <!-- Full Name Value -->
-        <TextView
-            android:id="@+id/fullname_value"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Uditha Madhushanka"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="12dp"/>
 
         <!-- Email Label -->
         <TextView
             android:id="@+id/email_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email:"
+            android:text="Email:  "
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#FFD700"
             android:layout_marginTop="40dp"/>
 
-        <!-- Email Value -->
-        <TextView
-            android:id="@+id/email_value"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="madhushankauditha@gmail.com"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="12dp"/>
 
         <TextView
             android:id="@+id/donation_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Donation Details:"
+            android:text="Donation Details: "
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#FFD700"
             android:layout_marginTop="40dp"/>
 
-        <!-- Email Value -->
-        <TextView
-            android:id="@+id/donation_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rs.1000/="
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="12dp"/>
+
     </LinearLayout>
 
     <!-- Footer -->

@@ -3,6 +3,7 @@ package com.example.anew
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -11,6 +12,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity3 : AppCompatActivity() {
 
@@ -19,11 +22,17 @@ class MainActivity3 : AppCompatActivity() {
     lateinit var amountInput: EditText
     lateinit var donateBtn: Button
 
+    private lateinit var userDatabase: DatabaseReference
+
     @SuppressLint("CutPasteId", "WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main3)
+
+        // Firebase reference
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        userDatabase = database.reference.child("donations")
 
         fullnameInput = findViewById(R.id.donation_name)
         idInput = findViewById(R.id.id_card_number)
@@ -41,7 +50,6 @@ class MainActivity3 : AppCompatActivity() {
             val idNumber = idInput.text.toString().trim()
             val amount = amountInput.text.toString().trim()
 
-            // Input validation
             if (fullName.isEmpty()) {
                 fullnameInput.error = "Full name is required"
                 return@setOnClickListener
@@ -57,35 +65,45 @@ class MainActivity3 : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // If all fields are filled, navigate to next screen
-            val intent = Intent(this@MainActivity3, MainActivity7::class.java)
-            startActivity(intent)
-            finish()
+            val donation = Donation(fullName, idNumber, amount)
+            Log.d("DonationDebug", "Attempting to write: $donation")
+
+            userDatabase.push().setValue(donation)
+                .addOnSuccessListener {
+                    Log.d("DonationDebug", "Data write success")
+                    Toast.makeText(this, "Donation submitted successfully", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@MainActivity3, MainActivity7::class.java))
+                    finish()
+                }
+                .addOnFailureListener {
+                    Log.e("DonationDebug", "Data write failed", it)
+                    Toast.makeText(this, "Failed to submit donation: ${it.message}", Toast.LENGTH_LONG).show()
+                }
         }
+
 
         // Navigation buttons
-        val imageButton1 = findViewById<ImageButton>(R.id.btn_home)
-        imageButton1.setOnClickListener {
-            val intentToLogin = Intent(this, MainActivity2::class.java)
-            startActivity(intentToLogin)
+        findViewById<ImageButton>(R.id.btn_home).setOnClickListener {
+            startActivity(Intent(this, MainActivity2::class.java))
         }
 
-        val imageButton2 = findViewById<ImageButton>(R.id.btn_search)
-        imageButton2.setOnClickListener {
-            val intentToLogin = Intent(this, MainActivity6::class.java)
-            startActivity(intentToLogin)
+        findViewById<ImageButton>(R.id.btn_search).setOnClickListener {
+            startActivity(Intent(this, MainActivity6::class.java))
         }
 
-        val imageButton3 = findViewById<ImageButton>(R.id.btn_donate)
-        imageButton3.setOnClickListener {
-            val intentToLogin = Intent(this, MainActivity3::class.java)
-            startActivity(intentToLogin)
+        findViewById<ImageButton>(R.id.btn_donate).setOnClickListener {
+            startActivity(Intent(this, MainActivity3::class.java))
         }
 
-        val imageButton4 = findViewById<ImageButton>(R.id.btn_profile)
-        imageButton4.setOnClickListener {
-            val intentToLogin = Intent(this, MainActivity5::class.java)
-            startActivity(intentToLogin)
+        findViewById<ImageButton>(R.id.btn_profile).setOnClickListener {
+            startActivity(Intent(this, MainActivity5::class.java))
         }
     }
+
+    // Data class outside the method for better practice
+    data class Donation(
+        val fullName: String,
+        val idNumber: String,
+        val amount: String
+    )
 }

@@ -9,39 +9,75 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.anew.R.id.btn_donate
+import com.google.firebase.database.*
+import android.widget.TextView
+
 
 class MainActivity5 : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+
+    private lateinit var fullnameTextView: TextView
+    private lateinit var emailTextView: TextView
+    private lateinit var donationTextView: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main5)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val imageButton1 = findViewById<ImageButton>(R.id.btn_home)
-        imageButton1.setOnClickListener {
-            val intentToLogin = Intent(this, MainActivity2::class.java)
-            startActivity(intentToLogin)
-        }
 
-        val imageButton2 = findViewById<ImageButton>(R.id.btn_search)
-        imageButton2.setOnClickListener {
-            val intentToLogin = Intent(this, MainActivity6::class.java)
-            startActivity(intentToLogin)
-        }
-        val imageButton3 = findViewById<ImageButton>(R.id.btn_donate)
-        imageButton3.setOnClickListener {
-            val intentToLogin = Intent(this, MainActivity3::class.java)
-            startActivity(intentToLogin)
-        }
+        // Initialize views
+        fullnameTextView = findViewById(R.id.fullname_label)
+        emailTextView = findViewById(R.id.email_label)
+        donationTextView = findViewById(R.id.donation_details)
 
-        val imageButton4 = findViewById<ImageButton>(R.id.btn_profile)
-        imageButton4.setOnClickListener {
-            val intentToLogin = Intent(this, MainActivity5::class.java)
-            startActivity(intentToLogin)
+        // Get data from Firebase
+        val dbRefUsers = FirebaseDatabase.getInstance().reference.child("users")
+        val dbRefDonations = FirebaseDatabase.getInstance().reference.child("donations")
+
+        // Fetch latest user (for demo purposes – in real app you'd use a user ID or auth)
+        dbRefUsers.limitToLast(1).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (userSnap in snapshot.children) {
+                    val fullName = userSnap.child("fullname").getValue(String::class.java)
+                    val email = userSnap.child("email").getValue(String::class.java)
+
+                    fullnameTextView.text = "Name: ${fullName ?: "N/A"}"
+                    emailTextView.text = "Email: ${email ?: "N/A"}"
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
+        // Fetch latest donation
+        dbRefDonations.limitToLast(1).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (donationSnap in snapshot.children) {
+                    val amount = donationSnap.child("amount").getValue(String::class.java)
+                    donationTextView.text = "Donation: ${amount ?: "N/A"}"
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
+
+        // Navigation buttons
+        findViewById<ImageButton>(R.id.btn_home).setOnClickListener {
+            startActivity(Intent(this, MainActivity2::class.java))
+        }
+        findViewById<ImageButton>(R.id.btn_search).setOnClickListener {
+            startActivity(Intent(this, MainActivity6::class.java))
+        }
+        findViewById<ImageButton>(R.id.btn_donate).setOnClickListener {
+            startActivity(Intent(this, MainActivity3::class.java))
+        }
+        findViewById<ImageButton>(R.id.btn_profile).setOnClickListener {
+            startActivity(Intent(this, MainActivity5::class.java))
         }
     }
 }

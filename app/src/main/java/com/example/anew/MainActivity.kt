@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.*
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        val userDatabase: DatabaseReference = database.reference.child("users")
+
+
         // Initialize the views
         usernameInput = findViewById(R.id.username_input)
         passwordInput = findViewById(R.id.password_input)
@@ -32,20 +39,42 @@ class MainActivity : AppCompatActivity() {
             val username = usernameInput.text.toString()
             val password = passwordInput.text.toString()
 
-            Log.i("Test Credentials", "Username: $username and Password: $password")
-
-            // Check if credentials are valid (for demo, we check if they are not empty)
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                // If valid, start MainActivity2
-                val intent = Intent(this, MainActivity2::class.java)
-                startActivity(intent)
-                finish()  // Close the current activity (MainActivity)
+                // Check in Firebase Database
+                userDatabase.orderByChild("username").equalTo(username)
+                    .addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            if (snapshot.exists()) {
+                                var validUser = false
+                                for (userSnap in snapshot.children) {
+                                    val dbPassword = userSnap.child("password").value.toString()
+                                    if (dbPassword == password) {
+                                        validUser = true
+                                        break
+                                    }
+                                }
+
+                                if (validUser) {
+                                    Toast.makeText(this@MainActivity, "Login successful", Toast.LENGTH_SHORT).show()
+                                    val intent = Intent(this@MainActivity, MainActivity2::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                } else {
+                                    Toast.makeText(this@MainActivity, "Incorrect password", Toast.LENGTH_SHORT).show()
+                                }
+                            } else {
+                                Toast.makeText(this@MainActivity, "Username not found", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                            Toast.makeText(this@MainActivity, "Database error: ${error.message}", Toast.LENGTH_SHORT).show()
+                        }
+                    })
             } else {
-                // Handle invalid credentials, e.g., show an error message
-                Log.i("Login", "Invalid credentials")
+                Toast.makeText(this, "Please fill the username and password correctly", Toast.LENGTH_SHORT).show()
             }
         }
-
         // Signup redirect button click listener (can add functionality to navigate to signup page)
         signBtn.setOnClickListener {
             // You can implement this later if needed

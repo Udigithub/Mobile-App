@@ -11,6 +11,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+
 
 class MainActivity4 : AppCompatActivity() {
 
@@ -26,6 +29,10 @@ class MainActivity4 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main4)
+
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        val userDatabase: DatabaseReference = database.reference.child("users")
+
 
         // Initialize the views
         fullnameInput = findViewById(R.id.fullname_input)
@@ -44,6 +51,14 @@ class MainActivity4 : AppCompatActivity() {
         }
 
         signUpBtn.setOnClickListener {
+
+            data class User(
+                val fullname: String,
+                val email: String,
+                val username: String,
+                val password: String
+            )
+
             val fullname = fullnameInput.text.toString().trim()
             val email = emailInput.text.toString().trim()
             val username = uNameInput.text.toString().trim()
@@ -54,11 +69,23 @@ class MainActivity4 : AppCompatActivity() {
                 username.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()
             ) {
                 if (password == confirmPassword) {
-                    // Log and go to login (MainActivity)
+                    // Create User object
+                    val user = User(fullname, email, username, password)
+
+                    // Save data to Firebase Realtime Database
+                    userDatabase.push().setValue(user).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "User registered successfully!", Toast.LENGTH_SHORT).show()
+                            // Redirect to Login Activity (MainActivity)
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this, "Failed to register. Please try again.", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
                     Log.i("SignUp", "User registered: $fullname, $email")
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
                 } else {
                     Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
                 }
